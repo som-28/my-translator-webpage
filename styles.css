@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: medium;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa; /* Light background color */
+  height: 100vh;
+  margin: 0;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.text-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between source and target containers */
+}
+
+.source-container, .target-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.input, .output {
+  width: 100%; /* Fill the width of their container */
+  height: 150px; /* Adequate height */
+  padding: 10px;
+  margin-bottom: 20px; /* Space between text areas and buttons */
+  border: 2px solid #ccc; /* Light gray border */
+  border-radius: 12px; /* Rounded corners */
+  background-color: #f2f2f2; /* Light background color for text areas */
+  font-size: 1rem;
+  resize: none; /* Prevents resizing */
+}
+
+.dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#source-languages, #target-languages {
+  background-color: #ffffff; /* White background */
+  border: 2px solid #ccc; /* Light gray border */
+  border-radius: 12px; /* Rounded corners */
+  padding: 10px;
+  cursor: pointer; /* Indicates selectable */
+}
+
+.switch-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#switcher {
+  width: 32px;
+  height: 32px;
+}
+
+button {
+  padding: 10px 20px; /* Consistent padding for all buttons */
+  border: none;
+  border-radius: 12px; /* Rounded corners */
+  color: white;
+  background-color: #031931; /* Bootstrap blue color */
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between buttons */
+}
+
+.attribution {
+  position: absolute;
+  right: 1060px;
+  bottom: 550px;
+  font-size: 1rem;
+  background-color: #e0e0e0; /* Light gray background */
+  padding: 8px;
+  border-radius: 6px; /* Rounded corners */
+}
+
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100px; /* Set width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10%; /* Rounded for circular appearance */
+}
