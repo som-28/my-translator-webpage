@@ -35,8 +35,7 @@ Create a new branch for your edits (git checkout -b feature/YourFeature).
 Commit your changes (git commit -am 'Add some YourFeature').
 Push to the branch (git push origin feature/YourFeature).
 Create a new Pull Request.
-License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+
 
 Acknowledgments
 Google Translate API for backend translation services.
