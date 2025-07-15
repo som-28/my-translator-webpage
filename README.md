@@ -1,5 +1,43 @@
 # Web-Based Translator Application
 
+## Changelog
+
+### Recent Major Updates
+
+- **UI/UX Redesign:**
+  - Clean, containerless single-page layout for a modern look.
+  - All settings (theme, accent color, font size, background) moved into a hamburger menu for uncluttered access.
+  - Unified button styles and sizes, replaced action buttons with emojis, and improved alignment and spacing.
+  - Visually polished dark mode and restored theme toggle.
+  - Removed high contrast theme and related code for simplicity.
+  - Fixed switch button and hamburger menu event handling.
+  - Translate button always shows emoji, with a spinner for loading state.
+
+- **Feature Additions:**
+  - **Copy to Clipboard, Speak Output, Download as .txt:** Quick actions for translated text.
+  - **Translation History:** View and reuse previous translations.
+  - **Auto-Detect Language:** Automatically detect input language.
+  - **Share Translation:** Share translations easily.
+  - **Character/Word Count:** Live count for input text.
+  - **Input Validation:** Prevent empty or invalid submissions.
+  - **UI Customization:** Change accent color, font size, and background pattern.
+  - **Keyboard Shortcuts:** For faster workflow.
+  - **Offline Mode:** Basic offline support for UI.
+  - **Language Flags:** Visual cues for selected languages.
+  - **Accessibility Improvements:**
+    - ARIA live regions for screen readers.
+    - Improved focus states and keyboard navigation.
+    - Toast notifications for actions and errors.
+    - Voice button state feedback and best-match TTS voice selection, with fallback notification if unsupported.
+
+- **Bug Fixes & Refinements:**
+  - Fixed button overlap, alignment, and spacing issues.
+  - Ensured all action buttons are the same size and visually harmonious.
+  - Improved loading states and feedback for all actions.
+  - Addressed browser TTS support issues for some languages.
+
+---
+
 This is a web-based translation tool designed to facilitate easy and quick translation between multiple languages. The application leverages HTML, CSS, and JavaScript to provide a user-friendly interface and responsive design, suitable for both desktop and mobile browsers.
 
 ## Features

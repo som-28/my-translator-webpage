@@ -1,67 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>MyTranslator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="main-container">
-        <img class="logo" src="path-to-your-logo" alt="Team Logo" />
-
-        <div class="dropdown">
+    <div class="hamburger-menu-container">
+        <button id="hamburger-toggle" aria-label="Open settings menu">☰</button>
+        <nav id="settings-menu" class="settings-menu" aria-label="Settings" tabindex="-1">
+            <button id="close-settings" aria-label="Close settings menu">×</button>
+            <form id="ui-customizer-menu">
+                <label for="accent-color-menu">Accent Color:</label>
+                <input type="color" id="accent-color-menu" name="accent-color-menu" value="#1e90ff" />
+                <label for="font-size-menu">Font Size:</label>
+                <select id="font-size-menu" name="font-size-menu">
+                    <option value="small">Small</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="large">Large</option>
+                </select>
+                <label for="bg-pattern-menu">Background:</label>
+                <select id="bg-pattern-menu" name="bg-pattern-menu">
+                    <option value="gradient" selected>Gradient</option>
+                    <option value="dots">Dots</option>
+                    <option value="grid">Grid</option>
+                </select>
+                <label for="theme-toggle-menu">Theme:</label>
+                <button type="button" id="theme-toggle-menu" aria-label="Toggle dark mode">🌙</button>
+            </form>
+        </nav>
+    </div>
+    <header class="header" role="banner">
+        <h1 class="app-title">MyTranslator</h1>
+        <span class="visually-hidden" id="sr-shortcuts">Keyboard shortcuts: Ctrl+Enter (Translate), Ctrl+L (Clear), Ctrl+Shift+S (Switch), Ctrl+Shift+C (Copy), Ctrl+Shift+V (Speak), Ctrl+Shift+D (Download), Ctrl+Shift+H (History)</span>
+    </header>
+    <main class="main-area" role="main" aria-label="Translator main area">
+        <section class="dropdown-section" aria-label="Language selection">
+            <label for="source-languages" class="visually-hidden">Source Language</label>
             <select id="source-languages">
-                <option value="zh">Chinese</option>
-                <option value="en" selected>English</option>
-                <option value="fr">French</option>
-                <option value="de">German</option>
-                <option value="el">Greek</option>
-                <option value="hi">Hindi</option>
-                <option value="ja">Japanese</option>
-                <option value="es">Spanish</option>
-                <option value="ta">Tamil</option>
-                <option value="te">Telugu</option>
+                <option value="auto">🌐 Auto-Detect</option>
+                <option value="zh">🇨🇳 Chinese</option>
+                <option value="en" selected>🇬🇧 English</option>
+                <option value="fr">🇫🇷 French</option>
+                <option value="de">🇩🇪 German</option>
+                <option value="el">🇬🇷 Greek</option>
+                <option value="hi">🇮🇳 Hindi</option>
+                <option value="ja">🇯🇵 Japanese</option>
+                <option value="es">🇪🇸 Spanish</option>
+                <option value="ta">🇮🇳 Tamil</option>
+                <option value="te">🇮🇳 Telugu</option>
             </select>
-
-            <button class="switch-button">
+            <button class="switch-button" aria-label="Switch languages">
                 <img id="switcher" src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/57902/left-right-arrow-emoji-clipart-sm.png" alt="switch icon" />
             </button>
-
+            <label for="target-languages" class="visually-hidden">Target Language</label>
             <select id="target-languages">
-                <option value="zh">Chinese</option>
-                <option value="en">English</option>
-                <option value="fr">French</option>
-                <option value="de">German</option>
-                <option value="el">Greek</option>
-                <option value="hi" selected>Hindi</option>
-                <option value="ja">Japanese</option>
-                <option value="es">Spanish</option>
-                <option value="ta">Tamil</option>
-                <option value="te">Telugu</option>
+                <option value="zh">🇨🇳 Chinese</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="fr">🇫🇷 French</option>
+                <option value="de">🇩🇪 German</option>
+                <option value="el">🇬🇷 Greek</option>
+                <option value="hi" selected>🇮🇳 Hindi</option>
+                <option value="ja">🇯🇵 Japanese</option>
+                <option value="es">🇪🇸 Spanish</option>
+                <option value="ta">🇮🇳 Tamil</option>
+                <option value="te">🇮🇳 Telugu</option>
             </select>
-        </div>
-
-        <div class="text-container">
+        </section>
+        <section class="text-container" aria-label="Text input and translation output">
             <div class="source-container">
-                <textarea class="input" placeholder="Enter text..."></textarea>
-
+                <textarea class="input" placeholder="Enter text..." aria-label="Input text"></textarea>
+                <div class="char-word-count" id="input-count"></div>
                 <div class="button-container">
-                    <button id="translate-button">Translate</button>
-                    <button id="voice-button">Speak</button>
-                    <button id="clear-button">Clear</button>
+                    <button id="translate-button" title="Translate">🌐</button>
+                    <button id="voice-button" title="Speak">🔊</button>
+                    <button id="clear-button" title="Clear">❌</button>
                 </div>
             </div>
-
             <div class="target-container">
-                <textarea class="output" placeholder="Translation" readonly></textarea>
+                <textarea class="output" placeholder="Translation" readonly aria-label="Translated text"></textarea>
+                <div class="char-word-count" id="output-count"></div>
+                <div class="output-actions">
+                    <button id="copy-output" title="Copy to clipboard">📋</button>
+                    <button id="speak-output" title="Speak translation">🔊</button>
+                    <button id="download-output" title="Download as .txt">⬇️</button>
+                    <button id="share-output" title="Share translation">🔗</button>
+                </div>
             </div>
+        </section>
+        <div id="listening-indicator" style="display: none;">
+            <span class="dot"></span> Listening...
         </div>
-
-        <div id="listening-indicator" style="display: none; color: red; font-weight: bold;">
-            Listening...
-        </div>
-
-    </div>
-
+    </main>
+    <section class="history-section" aria-label="Recent translations" role="region">
+        <h2 class="history-title">Recent Translations</h2>
+        <ul id="translation-history" class="history-list" aria-live="polite"></ul>
+    </section>
+    <footer class="footer">
+        <span>Made with ❤️ | MyTranslator</span>
+    </footer>
     <script src="translatorScript.js"></script>
+    <div id="toast-snackbar" aria-live="polite" class="visually-hidden"></div>
 </body>
 </html>
