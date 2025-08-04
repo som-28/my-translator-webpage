@@ -79,3 +79,5 @@ Acknowledgments
 Google Translate API for backend translation services.
 Inspiration from various design references.
 Community contributions and feedback.
+
+Made with ❤️ by Somnath
